@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "ba71eca4-0618-4ba9-8976-9ee1758563c8",
+		"name": "JWT Marketplace API",
+		"description": "Collection untuk mengetes JWT Marketplace API (FastAPI).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42940361"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user1@example.com\",\n    \"password\": \"pass123\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user1@example.com\",\n    \"password\": \"pass123\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "Get Items (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Update Profile (Protected)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"VincentA\",\n    \"email\": \"vincent@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"exec": [],
+				"type": "text/javascript"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"exec": [],
+				"type": "text/javascript"
+			}
+		}
+	]
+}
